@@ -17,25 +17,27 @@ links.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => links.classList.remove("open"));
 });
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (form) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const data = new FormData(form);
-  const subject = encodeURIComponent(
-    `Appsolute enquiry from ${data.get("name")}`
-  );
-  const body = encodeURIComponent(
-    [
-      `Name: ${data.get("name")}`,
-      `Email: ${data.get("email")}`,
-      `Company: ${data.get("company") || "—"}`,
-      `Project type: ${data.get("type")}`,
-      "",
-      data.get("message"),
-    ].join("\n")
-  );
+    const data = new FormData(form);
+    const subject = encodeURIComponent(
+      `Appsolute enquiry from ${data.get("name")}`
+    );
+    const body = encodeURIComponent(
+      [
+        `Name: ${data.get("name")}`,
+        `Email: ${data.get("email")}`,
+        `Company: ${data.get("company") || "—"}`,
+        `Project type: ${data.get("type")}`,
+        "",
+        data.get("message"),
+      ].join("\n")
+    );
 
-  window.location.href = `mailto:hello@appsolutedev.com?subject=${subject}&body=${body}`;
-  note.classList.add("show");
-  form.reset();
-});
+    window.location.href = `mailto:hello@appsolutedev.com?subject=${subject}&body=${body}`;
+    note.classList.add("show");
+    form.reset();
+  });
+}
