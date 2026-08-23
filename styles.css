@@ -82,8 +82,22 @@ textarea {
 }
 
 .logo img {
-  width: 34px;
-  height: 34px;
+  height: 42px;
+  width: auto;
+}
+
+.footer-logo {
+  display: inline-flex;
+  background: #000;
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin-bottom: 8px;
+}
+
+.footer-logo img {
+  height: 132px;
+  width: auto;
+  display: block;
 }
 
 .logo .app {
