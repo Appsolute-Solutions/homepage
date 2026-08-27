@@ -671,20 +671,20 @@ textarea {
   border-radius: 24px;
   padding: 40px;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  gap: 20px;
 }
 
 .field {
-  margin-bottom: 20px;
-}
-
-.field:last-of-type {
-  margin-bottom: 24px;
+  margin: 0;
+  display: block;
 }
 
 .field input,
@@ -693,7 +693,7 @@ textarea {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 15px 16px;
+  padding: 16px 18px;
   background: #fff;
   color: var(--ink);
 }
@@ -701,6 +701,10 @@ textarea {
 .field textarea {
   min-height: 148px;
   resize: vertical;
+}
+
+.form-card .btn {
+  margin-top: 4px;
 }
 
 .form-note {
