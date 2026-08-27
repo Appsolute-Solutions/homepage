@@ -623,20 +623,21 @@ textarea {
 .contact-panel {
   background: var(--bg-alt);
   border-radius: 28px;
-  padding: 48px 44px;
+  padding: 64px 56px;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 48px;
+  gap: 64px;
   align-items: start;
 }
 
 .contact-copy h2 {
-  margin: 0 0 22px;
+  margin: 0 0 32px;
   font-size: 2.05rem;
   letter-spacing: -0.03em;
+  line-height: 1.25;
 }
 
 .contact-list {
@@ -644,12 +645,12 @@ textarea {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 16px;
+  gap: 22px;
 }
 
 .contact-list li {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   align-items: flex-start;
   color: #374151;
 }
@@ -663,18 +664,22 @@ textarea {
 .form-card {
   background: #fff;
   border-radius: 20px;
-  padding: 28px;
+  padding: 36px;
   box-shadow: var(--shadow);
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 16px;
 }
 
 .field {
-  margin-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+.field:last-of-type {
+  margin-bottom: 22px;
 }
 
 .field input,
@@ -683,13 +688,13 @@ textarea {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 13px 14px;
+  padding: 14px 16px;
   background: #fff;
   color: var(--ink);
 }
 
 .field textarea {
-  min-height: 120px;
+  min-height: 140px;
   resize: vertical;
 }
 
@@ -786,7 +791,15 @@ textarea {
   }
 
   .contact-panel {
-    padding: 32px 22px;
+    padding: 40px 28px;
+  }
+
+  .contact-grid {
+    gap: 36px;
+  }
+
+  .form-card {
+    padding: 28px 24px;
   }
 }
 
