@@ -88,9 +88,9 @@ textarea {
 
 .footer-logo {
   display: inline-flex;
-  background: #000;
+  background: transparent;
   border-radius: 16px;
-  padding: 14px 18px;
+  padding: 0;
   margin-bottom: 8px;
 }
 
