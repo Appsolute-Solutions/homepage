@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Heirloom privacy policy</title>
+    <meta name="description" content="How the Heirloom antique value scanner handles your information." />
+    <link rel="icon" href="../assets/favicon.png" type="image/png" />
+    <style>
+      :root { color-scheme: light dark; --ink: #17181c; --muted: #5b5e66; --line: #e6e6e3; --bg: #fff; --link: #1a56b0; }
+      @media (prefers-color-scheme: dark) {
+        :root { --ink: #f2f2f0; --muted: #a9abb2; --line: #33343a; --bg: #17181c; --link: #8ab4f8; }
+      }
+      body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+      main { max-width: 680px; margin: 0 auto; padding: 48px 20px 72px; }
+      h1 { font-size: 36px; line-height: 1.15; letter-spacing: -0.5px; margin: 0 0 8px; }
+      h2 { font-size: 21px; margin: 36px 0 8px; padding-top: 24px; border-top: 1px solid var(--line); }
+      .meta { color: var(--muted); margin: 0 0 24px; font-size: 15px; }
+      p, ul { margin: 0 0 12px; }
+      ul { padding-left: 22px; }
+      li { margin-bottom: 8px; }
+      li ul { margin: 8px 0 0; }
+      a { color: var(--link); overflow-wrap: anywhere; }
+      ol { margin: 0 0 12px; padding-left: 22px; }
+      table { width: 100%; border-collapse: collapse; margin: 0 0 12px; font-size: 15px; line-height: 1.5; }
+      th, td { text-align: left; vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--line); }
+      th:last-child, td:last-child { padding-right: 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Heirloom privacy policy</h1>
+      <p class="meta">Effective 8 November 2026</p>
+      <p>Heirloom ("the app") is published by Appsolute Dev, a trading name of Appsolute Solutions ("we", "us"). This policy explains exactly what the app and our server do with your information. Questions: <a href="mailto:support@appsolutedev.com">support@appsolutedev.com</a>.</p>
+      <p>Published at <a href="https://appsolutedev.com/heirloom/privacy.html">https://appsolutedev.com/heirloom/privacy.html</a></p>
+      <h2>The short version</h2>
+      <ul><li>When you scan an item, your photos are sent to our server and to Google's Gemini AI <strong>only to produce your result</strong>. Our server does not store them and never writes them to logs.</li><li>Your scan history, photos, collection, notes and prices stay <strong>on your device</strong>.</li><li>No accounts, no ads, no analytics or tracking SDKs, and we never sell data.</li></ul>
+      <h2>What happens when you scan</h2>
+      <ol><li>You take or choose up to four photos. The app shrinks them on your device (longest side 1,280 pixels, JPEG) before sending.</li><li>The app sends them over an encrypted HTTPS connection to our server, with: the category you picked (if any), your currency, your device language and region (locale, for example en-ZA), your chosen marketplace region, whether a listing should be written, and an app user id (see below).</li><li>Our server checks your daily scan allowance, then forwards the photos and the request details to the Google Gemini API, which identifies the item and writes the estimate.</li><li>Our server checks the answer and sends it back to the app. The photos are then discarded. Our server does not save them to disk, a database or logs.</li></ol>
+      <p>Google processes the photos as our service provider under the Gemini API terms for paid services. Under those terms Google does not use them to improve its products. Google may keep requests for a limited time to detect abuse and meet legal obligations, as described in its Gemini API terms (<a href="https://ai.google.dev/gemini-api/terms">https://ai.google.dev/gemini-api/terms</a>).</p>
+      <h2>Information our server keeps</h2>
+      <table>
+        <thead><tr><th>What</th><th>Why</th><th>How long</th></tr></thead>
+        <tbody>
+          <tr><td>Scan counters keyed by a one-way, salted hash of your app user id, and a separate counter keyed by a one-way hash of your IP address (free scans only)</td><td>Daily free limit and abuse prevention</td><td>Expire automatically within 48 hours</td></tr>
+          <tr><td>Whether your app user id has an active Pro subscription (keyed by the same hash)</td><td>So we do not ask RevenueCat on every scan</td><td>Up to 24 hours</td></tr>
+          <tr><td>Reports you send with "Report a problem": result reference, the reason, your optional note, the text of the result, a hash of your app user id, and the time</td><td>To review AI results and improve the service</td><td>Newest 2,000 reports kept; older ones are deleted. Ask us to delete yours at any time</td></tr>
+          <tr><td>Technical log lines: model used, plan, number and size of photos, token counts, timings and error codes</td><td>Running and costing the service</td><td>As kept by our hosting provider, typically days</td></tr>
+        </tbody>
+      </table>
+      <p>Our logs never contain photos, raw app user ids or raw IP addresses. Our hosting provider (Vercel) may keep standard request logs, which can include your IP address, for a short period as part of running the service.</p>
+      <h2>The app user id</h2>
+      <p>To count scans and check subscriptions without an account, the app sends a pseudonymous id: on Android and iOS, the anonymous id created by RevenueCat (our subscription service); in the web preview, or in builds without subscriptions, a random id created on your device. It does not contain your name, email, phone number or advertising id.</p>
+      <h2>Purchases</h2>
+      <p>Subscriptions are bought through Google Play (or the App Store) and managed with RevenueCat. They receive your purchase details under their own privacy policies. We never see your card or bank details. Our server asks RevenueCat only whether your app user id has an active "Pro" subscription.</p>
+      <h2>Information stored on your device</h2>
+      <p>Your scan history (copies of your photos and the results), your collection, notes, what you paid, settings, any reports waiting to be sent while offline, the random app id, and your cached subscription status. This stays on your device. <strong>Settings, Delete all data</strong> removes your scans, photos, collection, notes, settings and queued reports (the random app id and the cached subscription status remain so your plan and daily limit keep working). Uninstalling the app removes everything.</p>
+      <h2>Camera</h2>
+      <p>The app uses the camera only when you choose to take a photo of an item. Choosing from your gallery uses the system photo picker, so the app cannot see the rest of your photos.</p>
+      <h2>Service providers</h2>
+      <ul><li>Google (Gemini API): identifying items and writing estimates. <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li><li>Vercel: hosting our server (United States). <a href="https://vercel.com/legal/privacy-policy">https://vercel.com/legal/privacy-policy</a></li><li>Upstash: storing the counters, subscription cache and reports listed above. <a href="https://upstash.com/trust/privacy.pdf">https://upstash.com/trust/privacy.pdf</a></li><li>RevenueCat: subscription status. <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></li><li>Google Play / Apple App Store: payments.</li></ul>
+      <p>These providers may process data outside your country, including in the United States. We use them only to run Heirloom.</p>
+      <h2>Your choices and rights</h2>
+      <ul><li>You can use the gallery instead of the camera, scan without choosing a category, and delete everything on your device at any time.</li><li>Because we do not keep accounts, photos or results, most of what we hold is short-lived and not linked to you. You can ask us about, or ask us to delete, a report you sent by emailing <a href="mailto:support@appsolutedev.com">support@appsolutedev.com</a> with the result reference shown under the result.</li><li>Depending on where you live (for example under POPIA in South Africa, the GDPR in the UK and EU, or US state laws) you may have further rights to access, correct or delete personal information, and to complain to your data protection authority.</li></ul>
+      <h2>Children</h2>
+      <p>Heirloom is not directed at children under 13 and we do not knowingly collect their information.</p>
+      <h2>AI results</h2>
+      <p>Results are generated by AI from your photos. They are estimates for information only, not a formal appraisal, and can be wrong.</p>
+      <h2>Changes</h2>
+      <p>If this policy changes we will update the date at the top and, for significant changes, tell you in the app.</p>
+      <h2>Contact</h2>
+      <p>Appsolute Dev (Appsolute Solutions), <a href="mailto:support@appsolutedev.com">support@appsolutedev.com</a></p>
+    </main>
+  </body>
+</html>
